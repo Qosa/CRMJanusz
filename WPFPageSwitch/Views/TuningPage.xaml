@@ -1,0 +1,150 @@
+﻿<UserControl
+    x:Name="tuningpage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:WPFPageSwitch.Views"
+    mc:Ignorable="d"
+	x:Class="WPFPageSwitch.TuningPage"
+	d:DesignWidth="640" d:DesignHeight="480" Width="800" Height="600">
+    <Grid x:Name="mainMenuLayoutRoot">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="White" Offset="0.611"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.Resources>
+            <Style TargetType="CheckBox">
+                <Setter Property="Margin" Value="100,0,0,0" />
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Margin="30,20,0,0" Text="Tjuning" FontSize="28" FontFamily="Dubai" Foreground="White"/>
+            <TextBlock Grid.Column="1" Margin="0,20,30,0" Text="Janusz" FontSize="36" FontFamily="Magneto" Foreground="White" HorizontalAlignment="Right"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Margin="0,5,0,0" Text="Dostepne modyfikacje:" FontSize="20" FontFamily="Dubai" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                <CheckBox Grid.Row="1" Name="CB1" Checked="CB1_Checked" Unchecked="CB1_Unchecked"/>
+                <CheckBox Grid.Row="2" Name="CB2" Checked="CB2_Checked" Unchecked="CB2_Unchecked"/>
+                <CheckBox Grid.Row="3" Name="CB3" Checked="CB3_Checked" Unchecked="CB3_Unchecked"/>
+                <CheckBox Grid.Row="4" Name="CB4" Checked="CB4_Checked" Unchecked="CB4_Unchecked"/>
+                <CheckBox Grid.Row="5" Name="CB5" Checked="CB5_Checked" Unchecked="CB5_Unchecked"/>
+                <CheckBox Grid.Row="6" Name="CB6" Checked="CB6_Checked" Unchecked="CB6_Unchecked"/>
+                <CheckBox Grid.Row="7" Name="CB7" Checked="CB7_Checked" Unchecked="CB7_Unchecked"/>
+                <CheckBox Grid.Row="8" Name="CB8" Checked="CB8_Checked" Unchecked="CB8_Unchecked"/>
+                <CheckBox Grid.Row="9" Name="CB9" Checked="CB9_Checked" Unchecked="CB9_Unchecked"/>
+                <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="Spojler" />
+                <TextBlock Grid.Row="2" HorizontalAlignment="Center" Text="WunderBaum" />
+                <TextBlock Grid.Row="3" HorizontalAlignment="Center" Text="Nakladka na tlumik" />
+                <TextBlock Grid.Row="4" HorizontalAlignment="Center" Text="Naklejka AMG/M/S" />
+                <TextBlock Grid.Row="5" HorizontalAlignment="Center" Text="Lampy Lexusy" />
+                <TextBlock Grid.Row="6" HorizontalAlignment="Center" Text="Siatka ogrodowa(Grill)" />
+                <TextBlock Grid.Row="7" HorizontalAlignment="Center" Text="Kolpaki" />
+                <TextBlock Grid.Row="8" HorizontalAlignment="Center" Text="Tuba bassowa 1500W" />
+                <TextBlock Grid.Row="9" HorizontalAlignment="Center" Text="Naklejka 'Pjonier'" />
+            </Grid>
+            <Grid Grid.Column="1" Margin="0,0,70,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Moc:" FontSize="20" FontFamily="Dubai" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+                    <TextBlock Grid.Column="1" Name="eee" Text="Lans:" FontSize="20" FontFamily="Dubai" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <local:CircularProgressBar Margin="0,0,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" SegmentColor="#FF878889" StrokeThickness="25" Percentage="100" />
+                                <local:CircularProgressBar Margin="0,0,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="{Binding ElementName=tuningpage, Path=PowerValue}" SegmentColor="DarkBlue" StrokeThickness="25" />
+                                <TextBlock Margin="0,0,0,30" Text="{Binding ElementName=tuningpage, Path=PowerValue}" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </Grid>
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <local:CircularProgressBar Margin="0,0,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" SegmentColor="#FF878889" StrokeThickness="25" Percentage="100" />
+                                <local:CircularProgressBar x:Name="SwagBar" Margin="0,0,0,30" HorizontalAlignment="Center" VerticalAlignment="Center" Percentage="{Binding ElementName=tuningpage, Path=SwagValue}" SegmentColor="DarkGoldenrod" StrokeThickness="25" />
+                                <TextBlock Margin="0,0,0,30" Text="{Binding ElementName=tuningpage, Path=SwagValue}" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </Grid>
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Cena za modyfikacje:" FontSize="12" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="DarkRed" />
+                    <TextBlock Grid.Row="1" Text="{Binding ElementName=tuningpage, Path=PartsPrice}" FontSize="28" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Cena auta po modyfikacjach:" FontSize="12" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="DarkRed" />
+                        <TextBlock Grid.Column="1" Text="Zysk:" FontSize="12" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="DarkRed" />
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="110000" FontSize="30" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                        <TextBlock Grid.Column="1" Text="12345" FontSize="30" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="Red" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Button Grid.Row="2" Content="Powrot" Name="backButton" Click="Button_Click" HorizontalAlignment="Right" Background="WhiteSmoke" Width="100" Height="30" Margin="0,0,150,50"/>
+        <Button Grid.Row="2" Content="Tjuninguj" Name="tuningButton" Click="Button_Click" HorizontalAlignment="Left" Background="WhiteSmoke" Width="100" Height="30" Margin="150,0,0,50"/>
+    </Grid>
+</UserControl>

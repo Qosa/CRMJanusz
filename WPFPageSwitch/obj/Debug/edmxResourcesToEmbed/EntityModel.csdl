@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cars">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="make" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="year" Type="Int32" Nullable="false" />
+    <Property Name="price" Type="Int32" Nullable="false" />
+    <Property Name="margin" Type="Double" Nullable="false" />
+    <Property Name="displ" Type="Double" Nullable="false" />
+    <Property Name="mileage" Type="Int32" Nullable="false" />
+    <Property Name="desc" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="fuelType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="photo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="power" Type="Int32" Nullable="false" />
+    <Property Name="trany" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="parking" Type="Int64" />
+  </EntityType>
+  <EntityType Name="import">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="make" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="model" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="year" Type="Int64" Nullable="false" />
+    <Property Name="displ" Type="Double" Nullable="false" />
+    <Property Name="fuelType" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="trany" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VClass" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="wpfJanuszDBEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cars" EntityType="Self.cars" />
+    <EntitySet Name="import" EntityType="Self.import" />
+  </EntityContainer>
+</Schema>

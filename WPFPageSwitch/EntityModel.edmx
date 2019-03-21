@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="mainModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="Data Source=C:\Users\lukasz.kolosinski\Downloads\WPFPageSwitcher\WPFPageSwitch\bin\Debug\januszDB.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cars">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="make" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="margin" Type="real" Nullable="false" />
+          <Property Name="displ" Type="real" Nullable="false" />
+          <Property Name="mileage" Type="int" Nullable="false" />
+          <Property Name="desc" Type="varchar" MaxLength="1000" />
+          <Property Name="fuelType" Type="varchar" MaxLength="20" />
+          <Property Name="photo" Type="varchar" MaxLength="500" />
+          <Property Name="power" Type="int" Nullable="false" />
+          <Property Name="trany" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="parking" Type="integer" />
+        </EntityType>
+        <EntityType Name="import">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="make" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="model" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="year" Type="integer" Nullable="false" />
+          <Property Name="displ" Type="real" Nullable="false" />
+          <Property Name="fuelType" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="trany" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="VClass" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="mainModelStoreContainer">
+          <EntitySet Name="cars" EntityType="Self.cars" store:Type="Tables" />
+          <EntitySet Name="import" EntityType="Self.import" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cars">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="make" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="margin" Type="Double" Nullable="false" />
+          <Property Name="displ" Type="Double" Nullable="false" />
+          <Property Name="mileage" Type="Int32" Nullable="false" />
+          <Property Name="desc" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="fuelType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="photo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="power" Type="Int32" Nullable="false" />
+          <Property Name="trany" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="parking" Type="Int64" />
+        </EntityType>
+        <EntityType Name="import">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="make" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="model" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="year" Type="Int64" Nullable="false" />
+          <Property Name="displ" Type="Double" Nullable="false" />
+          <Property Name="fuelType" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="trany" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VClass" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="wpfJanuszDBEntities5" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cars" EntityType="Self.cars" />
+          <EntitySet Name="import" EntityType="Self.import" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mainModelStoreContainer" CdmEntityContainer="wpfJanuszDBEntities5">
+          <EntitySetMapping Name="cars">
+            <EntityTypeMapping TypeName="mainModel.cars">
+              <MappingFragment StoreEntitySet="cars">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="make" ColumnName="make" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="margin" ColumnName="margin" />
+                <ScalarProperty Name="displ" ColumnName="displ" />
+                <ScalarProperty Name="mileage" ColumnName="mileage" />
+                <ScalarProperty Name="desc" ColumnName="desc" />
+                <ScalarProperty Name="fuelType" ColumnName="fuelType" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="power" ColumnName="power" />
+                <ScalarProperty Name="trany" ColumnName="trany" />
+                <ScalarProperty Name="parking" ColumnName="parking" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="import">
+            <EntityTypeMapping TypeName="mainModel.import">
+              <MappingFragment StoreEntitySet="import">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="make" ColumnName="make" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="displ" ColumnName="displ" />
+                <ScalarProperty Name="fuelType" ColumnName="fuelType" />
+                <ScalarProperty Name="trany" ColumnName="trany" />
+                <ScalarProperty Name="VClass" ColumnName="VClass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
