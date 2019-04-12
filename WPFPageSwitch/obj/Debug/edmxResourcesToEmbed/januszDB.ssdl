@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mainModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="Data Source=C:\Users\lukasz.kolosinski\Downloads\WPFPageSwitcher\WPFPageSwitch\bin\Debug\januszDB.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cars">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="make" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="model" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="year" Type="int" Nullable="false" />
+    <Property Name="price" Type="int" Nullable="false" />
+    <Property Name="margin" Type="real" Nullable="false" />
+    <Property Name="displ" Type="real" Nullable="false" />
+    <Property Name="mileage" Type="int" Nullable="false" />
+    <Property Name="desc" Type="varchar" MaxLength="1000" />
+    <Property Name="fuelType" Type="varchar" MaxLength="20" />
+    <Property Name="photo" Type="varchar" MaxLength="500" />
+    <Property Name="power" Type="int" Nullable="false" />
+    <Property Name="trany" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="parking" Type="integer" />
+  </EntityType>
+  <EntityType Name="import">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="make" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="model" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="year" Type="integer" Nullable="false" />
+    <Property Name="displ" Type="real" Nullable="false" />
+    <Property Name="fuelType" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="trany" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="VClass" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityType Name="transactions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="datetime" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="car" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="price" Type="integer" Nullable="false" />
+    <Property Name="balance" Type="integer" Nullable="false" />
+    <Property Name="buyer_name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="buyer_surname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="buyer_idnbr" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="buyer_address" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="buyer_postalcode" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="buyer_city" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="tr_type" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="filename" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="mainModelStoreContainer">
+    <EntitySet Name="cars" EntityType="Self.cars" store:Type="Tables" />
+    <EntitySet Name="import" EntityType="Self.import" store:Type="Tables" />
+    <EntitySet Name="transactions" EntityType="Self.transactions" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

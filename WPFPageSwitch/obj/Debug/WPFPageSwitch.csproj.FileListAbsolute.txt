@@ -185,3 +185,9 @@ C:\Users\lukasz.kolosinski\Downloads\WPFPageSwitcher\WPFPageSwitch\bin\Debug\Mic
 C:\Users\lukasz.kolosinski\Downloads\WPFPageSwitcher\WPFPageSwitch\bin\Debug\Newtonsoft.Json.xml
 C:\Users\lukasz.kolosinski\Downloads\WPFPageSwitcher\WPFPageSwitch\obj\Debug\Views\ImportCars.g.cs
 C:\Users\lukasz.kolosinski\Downloads\WPFPageSwitcher\WPFPageSwitch\obj\Debug\Views\ImportCars.baml
+C:\Users\lukasz.kolosinski\Downloads\WPFPageSwitcher\WPFPageSwitch\obj\Debug\Views\BuyerDataForm.g.cs
+C:\Users\lukasz.kolosinski\Downloads\WPFPageSwitcher\WPFPageSwitch\obj\Debug\Views\InvoicesView.g.cs
+C:\Users\lukasz.kolosinski\Downloads\WPFPageSwitcher\WPFPageSwitch\obj\Debug\Views\BuyerDataForm.baml
+C:\Users\lukasz.kolosinski\Downloads\WPFPageSwitcher\WPFPageSwitch\obj\Debug\Views\InvoicesView.baml
+C:\Users\lukasz.kolosinski\Downloads\WPFPageSwitcher\WPFPageSwitch\bin\Debug\itextsharp.dll
+C:\Users\lukasz.kolosinski\Downloads\WPFPageSwitcher\WPFPageSwitch\bin\Debug\itextsharp.xml

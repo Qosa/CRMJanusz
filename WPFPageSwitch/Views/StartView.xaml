@@ -68,7 +68,7 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Button Grid.Row="0" Content="Lista pojazdow" Click="Button1_Click" Margin="0,0,0,10"/>
-                <Button Grid.Row="1" Content="Sprzedaj pojazd" Click="Button2_Click" Margin="0,0,0,10" />
+                <Button Grid.Row="1" Content="Wystaw pojazd" Click="Button2_Click" Margin="0,0,0,10" />
             </Grid>
             <Grid Grid.Row="2" Name="importButtonRow">
                 <Grid.RowDefinitions>
@@ -77,13 +77,7 @@
                 </Grid.RowDefinitions>
                 <Button Grid.Row="0" Name="importButton" Content="Sprowadz auto" Click="Button3_Click" Margin="0,0,0,10"/>
                 <Button Grid.Row="0" Name="importInfo" Click="ImportInfo_Click" Width="20" Height="65" Background="Red" Foreground="White" Margin="0,0,60,0" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Hidden" ToolTip="Liczba aktualnie sprowadzanych pojazdow" />
-                <Button Grid.Row="1" Content="Galeria memow" Click="Button4_Click" Margin="0,0,0,10"/>
-                <Popup Margin="10,40,0,0" Name="Popup1" HorizontalAlignment="Left"   
- VerticalAlignment="Top" Placement="Bottom" PlacementTarget="{Binding ElementName=importInfo}" Width="200" Height="170" IsOpen="False" >
-                    <StackPanel Name="timerStack" Background="WhiteSmoke">
-                        <TextBlock Text="Sprowadzane pojazdy:" Foreground="Black" FontStyle="Italic"/>
-                    </StackPanel>
-                </Popup>
+                <Button Grid.Row="1" Content="Lista Transakcji" Click="Button4_Click" Margin="0,0,0,10"/>
             </Grid>
         </Grid>        
 	</Grid>

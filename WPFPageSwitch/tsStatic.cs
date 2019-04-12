@@ -16,7 +16,7 @@ namespace WPFPageSwitch
     public class TSStatic
     {
 
-        private wpfJanuszDBEntities5 _db = new wpfJanuszDBEntities5();
+        private januszDBEntities7 _db = new januszDBEntities7();
         private ObservableCollection<TimeSpan> _spanList = new ObservableCollection<TimeSpan>();
         public ObservableCollection<TimeSpan> spanList
         {
@@ -76,6 +76,13 @@ namespace WPFPageSwitch
         {
             get { return _tempParkingSlots; }
             set { _tempParkingSlots = value; }
+        }
+
+        private int _budget = 1500000;
+        public int budget
+        {
+            get { return _budget; }
+            set { _budget = value; }
         }
 
         public ParkingMap pmap { get; set; }

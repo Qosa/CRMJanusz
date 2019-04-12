@@ -13,10 +13,10 @@ namespace WPFPageSwitch
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class wpfJanuszDBEntities5 : DbContext
+    public partial class januszDBEntities7 : DbContext
     {
-        public wpfJanuszDBEntities5()
-            : base("name=wpfJanuszDBEntities5")
+        public januszDBEntities7()
+            : base("name=januszDBEntities7")
         {
         }
     
@@ -27,5 +27,6 @@ namespace WPFPageSwitch
     
         public virtual DbSet<cars> cars { get; set; }
         public virtual DbSet<import> import { get; set; }
+        public virtual DbSet<transactions> transactions { get; set; }
     }
 }

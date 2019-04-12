@@ -16,7 +16,7 @@ namespace WPFPageSwitch
 {
     public partial class SellVehicle : UserControl, ISwitchable
     {
-        private wpfJanuszDBEntities5 _db = new wpfJanuszDBEntities5();
+        private januszDBEntities7 _db = new januszDBEntities7();
         private bool _editMode = false;
         private int _id;
         private cars auto;

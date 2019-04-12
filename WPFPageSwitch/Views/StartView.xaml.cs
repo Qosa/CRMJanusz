@@ -21,7 +21,6 @@ namespace WPFPageSwitch
         public StartView()
 		{
             InitializeComponent();
-            ts1.spanChange += changer;
             try
             {
                 mainImage.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(AppDomain.CurrentDomain.GetData("DataDirectory").ToString() + "\\images\\mirek.png"));
@@ -41,21 +40,7 @@ namespace WPFPageSwitch
                 importInfo.Content = ts1.timersList.Count();
                 importInfo.Visibility = Visibility.Visible;
                 //Fill_stackPanel();
-            }
-            
-        }
-
-        private void changer(object sender, EventArgs e)
-        {
-            for (var i = 0; i < ts1.spanList.Count(); i++)
-            {
-                object timerBlk = timerStack.FindName("timerBlk" + i.ToString());
-                if (timerBlk is TextBlock)
-                {
-                    TextBlock block = timerBlk as TextBlock;
-                    block.Text = ts1.spanList[i].ToString();
-                }
-            }
+            }      
         }
 
         #region ISwitchable Members
@@ -78,7 +63,7 @@ namespace WPFPageSwitch
         }
         private void Button4_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Switcher.Switch(new testx());
+            Switcher.Switch(new InvoicesView());
         }
         #endregion
 

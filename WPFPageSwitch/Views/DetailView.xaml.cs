@@ -18,8 +18,7 @@ namespace WPFPageSwitch
     /// </summary>
     public partial class DetailView : UserControl, ISwitchable
     {
-        private wpfJanuszDBEntities5 _db = new wpfJanuszDBEntities5();
-
+        private januszDBEntities7 _db = new januszDBEntities7();
         private int ID { get; set; }
 
         private cars auto;
@@ -31,8 +30,7 @@ namespace WPFPageSwitch
             ID = samochod;
             System.Console.WriteLine(ID);
             auto = (from m in _db.cars where m.id == ID select m).Single();
-            markaTextBlock.Text = auto.make;
-            modelTextBlock.Text = auto.model;
+            markamodelTextBlock.Text = auto.make+" "+auto.model;
             cenaTextBlock.Text = auto.price.ToString();
             marzaTextBlock.Text = auto.price.ToString();
             rokprodTextBlock.Text = auto.year.ToString();
@@ -40,8 +38,10 @@ namespace WPFPageSwitch
             paliwoTextBlock.Text = auto.fuelType;
             przebiegTextBlock.Text = auto.mileage.ToString();
             opisTextBlock.Text = auto.desc;
+            powerTextBlock.Text = auto.power.ToString();
+            tranyTextBlock.Text = auto.trany;
 
-            if(auto.photo == "")
+            if (auto.photo == "")
             {
                 return;
             }
@@ -74,8 +74,7 @@ namespace WPFPageSwitch
             importButton.Visibility = Visibility.Visible;
             System.Console.WriteLine(ID);
             this.Car = Car;
-            markaTextBlock.Text = Car.make;
-            modelTextBlock.Text = Car.model;
+            markamodelTextBlock.Text = Car.make + " " + Car.model;
             cenaTextBlock.Text = Car.price.ToString();
             marzaTextBlock.Text = Car.margin.ToString();
             rokprodTextBlock.Text = Car.year.ToString();
@@ -83,6 +82,8 @@ namespace WPFPageSwitch
             paliwoTextBlock.Text = Car.fuelType;
             przebiegTextBlock.Text = Car.mileage.ToString();
             opisTextBlock.Text = Car.desc;
+            powerTextBlock.Text = Car.power.ToString();
+            tranyTextBlock.Text = Car.trany;
 
             if (Car.photo == "")
             {
@@ -118,6 +119,11 @@ namespace WPFPageSwitch
             Switcher.Switch(new StartView());
         }
         #endregion
+
+        private void sell_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Switcher.Switch(new BuyerDataForm(auto));
+        }
 
         private void edit_Click(object sender, System.Windows.RoutedEventArgs e)
         {

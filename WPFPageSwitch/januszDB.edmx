@@ -37,9 +37,28 @@
           <Property Name="trany" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
           <Property Name="VClass" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
         </EntityType>
+        <EntityType Name="transactions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="datetime" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="car" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="price" Type="integer" Nullable="false" />
+          <Property Name="balance" Type="integer" Nullable="false" />
+          <Property Name="buyer_name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="buyer_surname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="buyer_idnbr" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="buyer_address" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="buyer_postalcode" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="buyer_city" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="tr_type" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="filename" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="mainModelStoreContainer">
           <EntitySet Name="cars" EntityType="Self.cars" store:Type="Tables" />
           <EntitySet Name="import" EntityType="Self.import" store:Type="Tables" />
+          <EntitySet Name="transactions" EntityType="Self.transactions" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -78,16 +97,35 @@
           <Property Name="trany" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="VClass" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="wpfJanuszDBEntities5" annotation:LazyLoadingEnabled="true">
+        <EntityType Name="transactions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datetime" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="car" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="price" Type="Int64" Nullable="false" />
+          <Property Name="balance" Type="Int64" Nullable="false" />
+          <Property Name="buyer_name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="buyer_surname" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="buyer_idnbr" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="buyer_address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="buyer_postalcode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="buyer_city" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tr_type" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="filename" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="januszDBEntities7" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="cars" EntityType="Self.cars" />
           <EntitySet Name="import" EntityType="Self.import" />
+          <EntitySet Name="transactions" EntityType="Self.transactions" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="mainModelStoreContainer" CdmEntityContainer="wpfJanuszDBEntities5">
+        <EntityContainerMapping StorageEntityContainer="mainModelStoreContainer" CdmEntityContainer="januszDBEntities7">
           <EntitySetMapping Name="cars">
             <EntityTypeMapping TypeName="mainModel.cars">
               <MappingFragment StoreEntitySet="cars">
@@ -119,6 +157,25 @@
                 <ScalarProperty Name="fuelType" ColumnName="fuelType" />
                 <ScalarProperty Name="trany" ColumnName="trany" />
                 <ScalarProperty Name="VClass" ColumnName="VClass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transactions">
+            <EntityTypeMapping TypeName="mainModel.transactions">
+              <MappingFragment StoreEntitySet="transactions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="datetime" ColumnName="datetime" />
+                <ScalarProperty Name="car" ColumnName="car" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="buyer_name" ColumnName="buyer_name" />
+                <ScalarProperty Name="buyer_surname" ColumnName="buyer_surname" />
+                <ScalarProperty Name="buyer_idnbr" ColumnName="buyer_idnbr" />
+                <ScalarProperty Name="buyer_address" ColumnName="buyer_address" />
+                <ScalarProperty Name="buyer_postalcode" ColumnName="buyer_postalcode" />
+                <ScalarProperty Name="buyer_city" ColumnName="buyer_city" />
+                <ScalarProperty Name="tr_type" ColumnName="tr_type" />
+                <ScalarProperty Name="filename" ColumnName="filename" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

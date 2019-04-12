@@ -28,81 +28,69 @@
             <TextBlock Grid.Column="1" Margin="0,20,30,0" Text="Janusz" FontSize="36" FontFamily="Magneto" Foreground="White" HorizontalAlignment="Right"/>
         </Grid>
         <Border Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="2" CornerRadius="3" Height="400">
-            <Grid Grid.Row="1" Background="WhiteSmoke">
+            <Grid Grid.Row="1" Background="WhiteSmoke" Margin="0,-2,0,2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="200"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Name="markaTextBlock" FontFamily="Dubai" FontSize="24" FontWeight="Bold" Foreground="DarkGray" Margin="200,0,0,0"/>
-                    <TextBlock Grid.Column="1" Name="modelTextBlock" FontFamily="Dubai" FontSize="24" FontWeight="Bold" Foreground="DarkGray" Margin="100,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Name="markamodelTextBlock" FontFamily="Dubai" FontSize="24" FontWeight="Bold" Foreground="DarkGray"/>
                 </Grid>
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1" Margin="0,0,20,0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="350"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <Viewbox Margin="60,0,30,0">
+                        <Viewbox Margin="30,0,30,0">
                             <Border BorderBrush="DarkRed" BorderThickness="2" Width="300" Height="200">
                                 <Image Name="autoImage" Stretch="Fill" Width="300" Height="200"/>
                             </Border>
                         </Viewbox>
                     </Grid>
                     <Grid Grid.Column="1" Margin="10,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="75"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition />
                             <RowDefinition />
+                            <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="Cena:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="DarkGray"/>
-                            <TextBlock Grid.Column="0" Name="cenaTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                            <TextBlock Grid.Column="1" Text="Marza:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="DarkGray"/>
-                            <TextBlock Grid.Column="1" Name="marzaTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                        </Grid>
-                        <Grid Grid.Row="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="Rok prod.:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="DarkRed"/>
-                            <TextBlock Grid.Column="0" Name="rokprodTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                            <TextBlock Grid.Column="1" Text="Poj.silnika:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="DarkRed"/>
-                            <TextBlock Grid.Column="1" Name="pojsilTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                        </Grid>
-                        <Grid Grid.Row="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="Przebieg:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="DarkGray"/>
-                            <TextBlock Grid.Column="0" Name="przebiegTextBlock"  VerticalAlignment="Center" FontSize="16" Margin="75,0,0,0"/>
-                            <TextBlock Grid.Column="1" Text="Paliwo:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="DarkGray"/>
-                            <TextBlock Grid.Column="1" Name="paliwoTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
-                        </Grid>
+                        <TextBlock Grid.Column="0" Grid.Row="0" Text="Cena:" FontWeight="ExtraBold" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="DarkRed"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Name="cenaTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                        <TextBlock Grid.Column="2" Grid.Row="0" Text="Marza:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="DarkGray"/>
+                        <TextBlock Grid.Column="3" Grid.Row="0" Name="marzaTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="Rok prod.:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="DarkRed"/>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Name="rokprodTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                        <TextBlock Grid.Column="2" Grid.Row="1" Text="Poj.silnika:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="DarkRed"/>
+                        <TextBlock Grid.Column="3" Grid.Row="1" Name="pojsilTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                        <TextBlock Grid.Column="0" Grid.Row="2" Text="Przebieg:" HorizontalAlignment="left" VerticalAlignment="Center" FontSize="16" Foreground="DarkGray"/>
+                        <TextBlock Grid.Column="1" Grid.Row="2" Name="przebiegTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                        <TextBlock Grid.Column="2" Grid.Row="2" Text="Paliwo:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="DarkGray"/>
+                        <TextBlock Grid.Column="3" Grid.Row="2" Name="paliwoTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                        <TextBlock Grid.Column="0" Grid.Row="3" Text="Moc:" HorizontalAlignment="left" VerticalAlignment="Center" FontSize="16" Foreground="DarkRed"/>
+                        <TextBlock Grid.Column="1" Grid.Row="3" Name="powerTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+                        <TextBlock Grid.Column="2" Grid.Row="3" Text="Skrzynia:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="DarkRed"/>
+                        <TextBlock Grid.Column="3" Grid.Row="3" Name="tranyTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
+                        <RowDefinition Height="50"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Text="Opis:" HorizontalAlignment="Left" FontSize="16" Foreground="DarkGray" Margin="100,50,0,0"/>
+                    <TextBlock Grid.Row="0" Text="Opis:" HorizontalAlignment="Left" FontSize="16" Foreground="DarkGray" Margin="100,30,0,0"/>
                     <TextBlock Grid.Row="1" Name="opisTextBlock" HorizontalAlignment="Center" FontSize="16" TextWrapping="Wrap" Width="700" Margin="20,0,0,0"/>
                 </Grid>
             </Grid>
         </Border>
-        <Button Grid.Row="4" Content="Edytuj" Name="buyButton" Click="edit_Click" HorizontalAlignment="Left" Background="WhiteSmoke" Width="100" Height="30" Margin="75,0,0,50"/>
+        <Button Grid.Row="4" Content="Sprzedaj" Name="sellButton" Click="sell_Click" HorizontalAlignment="Left" Background="WhiteSmoke" Width="100" Height="30" Margin="75,0,0,50"/>
         <Button Grid.Row="4" Content="Sprowadz" Name="importButton" Click="import_Click" HorizontalAlignment="Left" Background="WhiteSmoke" Width="100" Height="30" Margin="75,0,0,50" Visibility="Hidden"/>
         <Button Grid.Row="4" Content="Edytuj" Name="editButton" Click="edit_Click" HorizontalAlignment="Left" Background="WhiteSmoke" Width="100" Height="30" Margin="185,0,0,50"/>
         <Button Grid.Row="4" Content="Krec licznik" Name="distanceChangerButton" Click="distanceChanger_Click" HorizontalAlignment="Left" Background="WhiteSmoke" Width="100" Height="30" Margin="295,0,0,50"/>

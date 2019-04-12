@@ -67,7 +67,7 @@
             <TextBlock Grid.Column="0" Name="yearTextblock" Margin="50,15,0,0" Text="Rocznik:" FontSize="16" FontFamily="Dubai" Foreground="White" HorizontalAlignment="Left" Visibility="Hidden"/>
             <ComboBox Grid.Column="0" Name="yearComboBox" SelectedIndex="0" ItemsSource="{Binding ElementName=mainlistpage, Path=Years , Mode=TwoWay}" SelectedItem="{Binding ElementName=mainlistpage,Path=MyItem3}" SelectionChanged="yearComboBox_Changed" Width="180" Height="20" Margin="130,15,50,0" HorizontalAlignment="Center" Visibility="Hidden"/>
             <TextBlock Grid.Column="1" Name="budgetTextBlock1" Margin="70,15,0,0" Text="Budzet:" FontSize="16" FontFamily="Dubai" Foreground="White" HorizontalAlignment="Left" Visibility="Hidden"/>
-            <TextBlock Grid.Column="1" Text="xxxxxxxxxx" Name="budgetTextBlock2" Margin="130,10,70,0" FontSize="20" FontFamily="Dubai" Foreground="DarkRed" HorizontalAlignment="Left" Visibility="Hidden"/>
+            <TextBlock Grid.Column="1" Text="{Binding ElementName=mainlistpage, Path=budget }" Name="budgetTextBlock2" Margin="130,10,70,0" FontSize="20" FontFamily="Dubai" Foreground="DarkRed" HorizontalAlignment="Left" Visibility="Hidden"/>
         </Grid>
         <ListBox Grid.Row="3" Name="listbox1" Margin="30,60,0,0" Background="Transparent" BorderThickness="0" FontFamily="Dubai">
             <ListBox.ItemTemplate>

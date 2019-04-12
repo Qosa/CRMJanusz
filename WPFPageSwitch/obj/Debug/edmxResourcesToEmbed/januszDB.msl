@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mainModelStoreContainer" CdmEntityContainer="januszDBEntities7">
+    <EntitySetMapping Name="cars">
+      <EntityTypeMapping TypeName="mainModel.cars">
+        <MappingFragment StoreEntitySet="cars">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="make" ColumnName="make" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="margin" ColumnName="margin" />
+          <ScalarProperty Name="displ" ColumnName="displ" />
+          <ScalarProperty Name="mileage" ColumnName="mileage" />
+          <ScalarProperty Name="desc" ColumnName="desc" />
+          <ScalarProperty Name="fuelType" ColumnName="fuelType" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="power" ColumnName="power" />
+          <ScalarProperty Name="trany" ColumnName="trany" />
+          <ScalarProperty Name="parking" ColumnName="parking" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="import">
+      <EntityTypeMapping TypeName="mainModel.import">
+        <MappingFragment StoreEntitySet="import">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="make" ColumnName="make" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="displ" ColumnName="displ" />
+          <ScalarProperty Name="fuelType" ColumnName="fuelType" />
+          <ScalarProperty Name="trany" ColumnName="trany" />
+          <ScalarProperty Name="VClass" ColumnName="VClass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transactions">
+      <EntityTypeMapping TypeName="mainModel.transactions">
+        <MappingFragment StoreEntitySet="transactions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="datetime" ColumnName="datetime" />
+          <ScalarProperty Name="car" ColumnName="car" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="buyer_name" ColumnName="buyer_name" />
+          <ScalarProperty Name="buyer_surname" ColumnName="buyer_surname" />
+          <ScalarProperty Name="buyer_idnbr" ColumnName="buyer_idnbr" />
+          <ScalarProperty Name="buyer_address" ColumnName="buyer_address" />
+          <ScalarProperty Name="buyer_postalcode" ColumnName="buyer_postalcode" />
+          <ScalarProperty Name="buyer_city" ColumnName="buyer_city" />
+          <ScalarProperty Name="tr_type" ColumnName="tr_type" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

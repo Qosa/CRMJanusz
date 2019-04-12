@@ -23,7 +23,7 @@ namespace WPFPageSwitch.Views
     /// </summary>
     public partial class ParkingMap : UserControl, INotifyPropertyChanged
     {
-        private wpfJanuszDBEntities5 _db = new wpfJanuszDBEntities5();
+        private januszDBEntities7 _db = new januszDBEntities7();
         private cars editedCar;
         private Car Car;
         private bool editMode = false;

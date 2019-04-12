@@ -31,8 +31,12 @@ namespace WPFPageSwitch
             }
         }
 
+        public string budget
+        {
+            get { return ts1.budget.ToString(); }
+        }
         
-        private wpfJanuszDBEntities5 _db = new wpfJanuszDBEntities5();
+        private januszDBEntities7 _db = new januszDBEntities7();
         private readonly BackgroundWorker worker = new BackgroundWorker();
         private List<cars> element;
         private Views.progressBar pbar = new Views.progressBar();

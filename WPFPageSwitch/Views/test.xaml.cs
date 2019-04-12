@@ -22,7 +22,7 @@ namespace WPFPageSwitch.Views
     /// </summary>
     public partial class test : UserControl, INotifyPropertyChanged
     {
-        private wpfJanuszDBEntities5 _db = new wpfJanuszDBEntities5();
+        private januszDBEntities7 _db = new januszDBEntities7();
         private ObservableCollection<string> _auta = new ObservableCollection<string>();
         public ObservableCollection<string> Auta
         {
